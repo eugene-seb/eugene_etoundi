@@ -279,25 +279,6 @@
     new PureCounter();
 })();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * PHP Email Form Validation - v3.5
  * URL: https://bootstrapmade.com/php-email-form/
@@ -335,28 +316,28 @@
             body: formData,
             headers: { "X-Requested-With": "XMLHttpRequest" },
         })
-            .then((response) => {
-                return response.text();
-            })
-            .then((data) => {
-                thisForm.querySelector(".loading").classList.remove("d-block");
-                if (data.trim() == "OK") {
-                    thisForm
-                        .querySelector(".sent-message")
-                        .classList.add("d-block");
-                    thisForm.reset();
-                } else {
-                    throw new Error(
-                        data
-                            ? data
-                            : "Form submission failed and no error message returned from: " +
-                            action
-                    );
-                }
-            })
-            .catch((error) => {
-                //displayError(thisForm, error);
-            });
+        .then((response) => {
+            return response.text();
+        })
+        .then((data) => {
+            thisForm.querySelector(".loading").classList.remove("d-block");
+           // if (data.trim() == "OK") {
+                thisForm
+                    .querySelector(".sent-message")
+                    .classList.add("d-block");
+                thisForm.reset();
+            /*} else {
+                throw new Error(
+                    data
+                        ? data
+                        : "Form submission failed and no error message returned from: " +
+                        action
+                );
+            }*/
+        })
+        .catch((error) => {
+            displayError(thisForm, error);
+        });
     }
 
     function displayError(thisForm, error) {
