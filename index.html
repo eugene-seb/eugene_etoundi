@@ -958,7 +958,7 @@
 						<!-- Formspree is a form backend, API and email service for HTML forms. 
 							It is the simplest way to embed custom contact us forms, order forms, or email capture forms.
 							I use it here because I couldn't use PHP on Github. -->
-						<form action="https://formspree.io/f/xrgdyjkb" method="post" role="form" class="php-email-form"
+						<form action="https://formspree.io/f/xrgdyjkb" method="post" role="form" class="email-form"
 							id="myForm">
 							<div class="row">
 								<div class="col-md-6 form-group">
@@ -1045,21 +1045,13 @@
 	<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 	<script src="assets/vendor/typed.js/typed.min.js"></script>
 	<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-	<!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
 	<!-- Template Main JS File -->
 	<script src="assets/js/main.js"></script>
 
 	<!-- reCAPTCHAT API-->
-	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async="on" defer></script>
 
-	<script>
-		function onSubmit(token) {
-			alert("hello");
-			document.getElementById("myForm").submit();
-			document.getElementById("myForm").reset();
-		}
-	</script>
 </body>
 
 </html>
