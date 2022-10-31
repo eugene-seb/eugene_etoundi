@@ -279,67 +279,87 @@
     new PureCounter();
 })();
 
+//===================== FORM SUBMITION =============================================
 /**
- * PHP Email Form Validation - v3.5
- * URL: https://bootstrapmade.com/php-email-form/
- * Author: BootstrapMade.com
+ * Author: ETOUNDI II Eugène Sébastien
+ * 
  */
 
-function email_form_fetch() { alert();
-    let forms = document.querySelectorAll(".php-email-form");
-
-    forms.forEach(function (e) {
-        e.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            let thisForm = this;
-
-            let action = thisForm.getAttribute("action");
-
-            if (!action) {
-                displayError(thisForm, "The form action property is not set!");
-                return;
-            }
-
-            thisForm.querySelector(".loading").classList.add("d-block");
-            thisForm.querySelector(".sent-message").classList.remove("d-block");
-
-            let formData = new FormData(thisForm);
-            php_email_form_submit(thisForm, action, formData);
-        });
-    });
-}
-
-function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-        method: "POST",
-        body: formData,
-        headers: { "X-Requested-With": "XMLHttpRequest" },
+var form = document.getElementById("myForm");
+async function handleSubmit(event) {
+    event.preventDefault();
+    displayLoading(form);
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { Accept: "application/json" },
     })
         .then((response) => {
-            return response.text();
-        })
-        .then((data) => {
-            thisForm.querySelector(".loading").classList.remove("d-block");
-            // if (data.trim() == "OK") {
-            thisForm.querySelector(".sent-message").classList.add("d-block");
-            thisForm.reset();
-            /*} else {
-                throw new Error(
-                    data
-                        ? data
-                        : "Form submission failed and no error message returned from: " +
-                        action
-                );
-            }*/
+            if (response.ok) {
+                displaySuccess(form);
+            } else {
+                response.json().then((data) => {
+                    if (Object.hasOwn(data, "errors")) {
+                        error = data["errors"]
+                            .map((error) => error["message"])
+                            .join(", ");
+                        displayError(form, error);
+                    } else {
+                        error =
+                            "Oops! There was a problem submitting your form";
+                        displayError(form, error);
+                    }
+                });
+            }
         })
         .catch((error) => {
-            displayError(thisForm, error);
+            error = "Oops! There was a problem submitting your form";
+            displayError(form, error);
         });
 }
+form.addEventListener("submit", handleSubmit);
 
-function displayError(thisForm, error) {
-    thisForm.querySelector(".loading").classList.remove("d-block");
-    thisForm.querySelector(".error-message").innerHTML = error;
-    thisForm.querySelector(".error-message").classList.add("d-block");
+/**
+ * When the form is submitting
+ *
+ * @param {*} form
+ */
+function displayLoading(form) {
+    form.querySelector(".loading").classList.add("d-block");
+    form.querySelector(".sent-message").classList.remove("d-block");
+    form.querySelector(".error-message").classList.remove("d-block");
 }
+
+/**
+ * The form have been sumitted successsfully
+ *
+ * @param {*} form
+ */
+function displaySuccess(form) {
+    form.querySelector(".loading").classList.remove("d-block");
+    form.querySelector(".sent-message").classList.add("d-block");
+    form.reset();
+}
+
+/**
+ * The form haven't been sumitted successsfully
+ *
+ * @param {*} form
+ * @param {*} error
+ */
+function displayError(form, error) {
+    form.querySelector(".loading").classList.remove("d-block");
+    form.querySelector(".error-message").innerHTML = error;
+    form.querySelector(".error-message").classList.add("d-block");
+}
+
+/**
+ * to make the reCAPTCHA field a required field
+ */
+window.onload = function () {
+    var el = document.getElementById("g-recaptcha-response");
+    if (el) {
+        el.setAttribute("required", "required");
+    }
+};
