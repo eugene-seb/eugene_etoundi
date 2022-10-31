@@ -284,9 +284,8 @@
  * URL: https://bootstrapmade.com/php-email-form/
  * Author: BootstrapMade.com
  */
-(function () {
-    "use strict";
 
+function email_form_fetch() { alert();
     let forms = document.querySelectorAll(".php-email-form");
 
     forms.forEach(function (e) {
@@ -309,23 +308,22 @@
             php_email_form_submit(thisForm, action, formData);
         });
     });
+}
 
-    function php_email_form_submit(thisForm, action, formData) {
-        fetch(action, {
-            method: "POST",
-            body: formData,
-            headers: { "X-Requested-With": "XMLHttpRequest" },
-        })
+function php_email_form_submit(thisForm, action, formData) {
+    fetch(action, {
+        method: "POST",
+        body: formData,
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+    })
         .then((response) => {
             return response.text();
         })
         .then((data) => {
             thisForm.querySelector(".loading").classList.remove("d-block");
-           // if (data.trim() == "OK") {
-                thisForm
-                    .querySelector(".sent-message")
-                    .classList.add("d-block");
-                thisForm.reset();
+            // if (data.trim() == "OK") {
+            thisForm.querySelector(".sent-message").classList.add("d-block");
+            thisForm.reset();
             /*} else {
                 throw new Error(
                     data
@@ -338,11 +336,10 @@
         .catch((error) => {
             displayError(thisForm, error);
         });
-    }
+}
 
-    function displayError(thisForm, error) {
-        thisForm.querySelector(".loading").classList.remove("d-block");
-        thisForm.querySelector(".error-message").innerHTML = error;
-        thisForm.querySelector(".error-message").classList.add("d-block");
-    }
-})();
+function displayError(thisForm, error) {
+    thisForm.querySelector(".loading").classList.remove("d-block");
+    thisForm.querySelector(".error-message").innerHTML = error;
+    thisForm.querySelector(".error-message").classList.add("d-block");
+}
