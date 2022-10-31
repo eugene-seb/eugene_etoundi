@@ -356,6 +356,8 @@ function displayError(form, error) {
 
 /**
  * to make the reCAPTCHA field a required field
+ * 
+ * https://www.google.com/recaptcha/
  */
 window.onload = function () {
     var el = document.getElementById("g-recaptcha-response");
