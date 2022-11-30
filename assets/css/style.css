@@ -536,6 +536,10 @@ section {
   color: #45505b;
 }
 
+.resume .row  .Academic_Projects {
+  text-align: center;
+}
+
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
