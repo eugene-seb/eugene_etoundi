@@ -587,6 +587,88 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Value_Antivalue
+--------------------------------------------------------------*/
+.Value_Antivalue .Value-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #02b254;
+}
+
+.Value_Antivalue .Antivalue-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #d30d45;
+}
+
+.Value_Antivalue .Value_Antivalue-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  position: relative;
+}
+
+.Value_Antivalue .Value_Antivalue-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #0563bb;
+  margin-bottom: 10px;
+}
+
+.Value_Antivalue .Value_Antivalue-item h5 {
+  font-size: 16px;
+  background: #f7f8f9;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.Value_Antivalue .Value_Antivalue-item ul {
+  padding-left: 20px;
+}
+
+.Value_Antivalue .Value_Antivalue-item ul li {
+  padding-bottom: 10px;
+}
+
+.Value_Antivalue .Value_Antivalue-item:last-child {
+  padding-bottom: 0;
+}
+
+.Value_Antivalue .Value_Antivalue-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+}
+
+/* vertical line and circle style of Value and Antivalue */
+.Value_Antivalue .Value {
+  border-left: 2px solid #02b254;
+}
+.Value_Antivalue .Value::before {
+  border: 2px solid #02b254;
+}
+
+.Value_Antivalue .Antivalue {
+  border-left: 2px solid #d30d45;
+}
+.Value_Antivalue .Antivalue::before {
+  border: 2px solid #d30d45;
+}
+
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
