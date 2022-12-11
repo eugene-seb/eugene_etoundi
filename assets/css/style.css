@@ -539,6 +539,9 @@ section {
 .resume .row  .Academic_Projects {
   text-align: center;
 }
+.resume .row   {
+  text-align: justify;
+}
 
 .resume .resume-item {
   padding: 0 0 20px 20px;
@@ -593,6 +596,13 @@ section {
 /*--------------------------------------------------------------
 # Value_Antivalue
 --------------------------------------------------------------*/
+.Value_Antivalue .container .section-title p {
+  text-align: justify;
+}
+.Value_Antivalue .row {
+  text-align: justify;
+}
+
 .Value_Antivalue .Value-title {
   font-size: 26px;
   font-weight: 700;
