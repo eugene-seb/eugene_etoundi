@@ -1,6 +1,3 @@
-Thanks for downloading this template!
+Here is my Web Site / Portfolio made with BootstrapMade.com's template.
 
-Template Name: MyResume
-Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-Author: BootstrapMade.com
 License: https://bootstrapmade.com/license/
