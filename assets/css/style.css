@@ -448,49 +448,46 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Facts
+# Volunteer involvement
 --------------------------------------------------------------*/
-.facts .count-box {
-  padding: 30px 30px 25px 30px;
-  margin-top: 30px;
-  width: 100%;
+.volunteer_involvement .volunteer_involvement-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #45505b;
+}
+
+.volunteer_involvement .row   {
+  text-align: justify;
+}
+
+.volunteer_involvement .volunteer_involvement-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #0563bb;
   position: relative;
-  text-align: center;
-  background: #fff;
 }
 
-.facts .count-box i {
+.volunteer_involvement .volunteer_involvement-item:last-child {
+  padding-bottom: 0;
+}
+
+.volunteer_involvement .volunteer_involvement-item::before {
+  content: "";
   position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 24px;
-  background: #0563bb;
-  color: #fff;
+  width: 16px;
+  height: 16px;
   border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0563bb;
 }
 
-.facts .count-box span {
-  font-size: 36px;
-  display: block;
-  font-weight: 600;
-  color: #011426;
-}
-
-.facts .count-box p {
-  padding: 0;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-}
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -523,6 +520,44 @@ section {
   height: 10px;
   transition: 0.9s;
   background-color: #0563bb;
+}
+
+/*--------------------------------------------------------------
+# My career
+--------------------------------------------------------------*/
+.my_career .my_career-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #45505b;
+}
+
+.my_career .row   {
+  text-align: justify;
+}
+
+.my_career .my_career-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #0563bb;
+  position: relative;
+}
+
+.my_career .my_career-item:last-child {
+  padding-bottom: 0;
+}
+
+.my_career .my_career-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0563bb;
 }
 
 /*--------------------------------------------------------------
@@ -582,6 +617,44 @@ section {
 }
 
 .resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0563bb;
+}
+
+/*--------------------------------------------------------------
+# Volunteer involvement
+--------------------------------------------------------------*/
+.training_resume .training_resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #45505b;
+}
+
+.training_resume .row   {
+  text-align: justify;
+}
+
+.training_resume .training_resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #0563bb;
+  position: relative;
+}
+
+.training_resume .training_resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.training_resume .training_resume-item::before {
   content: "";
   position: absolute;
   width: 16px;
@@ -1038,6 +1111,48 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Facts
+--------------------------------------------------------------*/
+.facts .count-box {
+  padding: 30px 30px 25px 30px;
+  margin-top: 30px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background: #fff;
+}
+
+.facts .count-box i {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  background: #0563bb;
+  color: #fff;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.facts .count-box span {
+  font-size: 36px;
+  display: block;
+  font-weight: 600;
+  color: #011426;
+}
+
+.facts .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials .section-header {
@@ -1328,10 +1443,6 @@ section {
   background: #0678e3;
   color: #fff;
   text-decoration: none;
-}
-
-#footer .copyright {
-  margin: 0 0 5px 0;
 }
 
 #footer .credits {
