@@ -794,6 +794,7 @@ section {
 .contact-item-icon {
     width: 36px;
     height: 36px;
+    color: white;
     background: var(--bg2);
     border-radius: 6px;
     display: flex;
